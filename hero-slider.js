@@ -14,7 +14,7 @@ const bgSlidesCount = swiperBg.slides.length;
 // Swiper 1 [START]
 const swiperBlock = document.querySelector(".swiper_block.is-hero");
 
-// Сохраняем оригинальные слайды до инициализации
+
 const originalSlides = Array.from(
   swiperBlock.querySelectorAll(".swiper-slide.is-hero")
 ).map(el => el.outerHTML);
@@ -38,8 +38,7 @@ function setActiveLastItem(swiper) {
     swiperBg.slideTo(swiper.activeIndex % bgSlidesCount);
   }
 
-  // Если осталось меньше 3 слайдов впереди — добавляем ещё
-  if (swiper.activeIndex >= swiper.slides.length - 3) {
+if (swiper.activeIndex >= swiper.slides.length - 3) {
     appendMoreSlides(swiper);
   }
 }
@@ -76,7 +75,7 @@ const swiperHero = new Swiper(swiperBlock.querySelector(".swiper"), {
 
 });
 
-setTimeout(() => setActiveLastItem(swiperHero), 4000);
+setTimeout(() => setActiveLastItem(swiperHero), 4400);
 
 document.querySelector('.swiper_block.is-hero-bg').addEventListener('animationend', () => {
   swiperHero.autoplay.start();
