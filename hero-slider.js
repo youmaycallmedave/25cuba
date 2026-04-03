@@ -4,7 +4,7 @@ const swiperBgBlock = document.querySelector(".swiper_block.is-hero-bg");
 const swiperBg = new Swiper(swiperBgBlock.querySelector(".swiper"), {
   effect: "fade",
   fadeEffect: { crossFade: true },
-  speed: 800,
+  speed: 1200,
   allowTouchMove: false,
   slideActiveClass: "is-active",
 });
@@ -75,7 +75,7 @@ const swiperHero = new Swiper(swiperBlock.querySelector(".swiper"), {
 
 });
 
-setTimeout(() => setActiveLastItem(swiperHero), 4400);
+setTimeout(() => setActiveLastItem(swiperHero), 6000);
 
 document.querySelector('.swiper_block.is-hero-bg').addEventListener('animationend', () => {
   swiperHero.autoplay.start();
