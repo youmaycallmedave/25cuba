@@ -1,0 +1,72 @@
+<div id="cookie-banner" class="cb" role="dialog" aria-modal="true" aria-labelledby="cb-title">
+
+  <button class="cb__close" id="cb-close" aria-label="Close">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+      <line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <div class="cb__content">
+    <p class="cb__title" id="cb-title">This Website Uses Cookies</p>
+    <p class="cb__text">Where we have your consent, we use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you've provided to them or that they've collected from your use of their services.</p>
+  </div>
+
+  <div class="cb__settings" id="cb-settings" hidden>
+    <div class="cb__row">
+      <div class="cb__label">
+        Necessary
+        <span>Always active</span>
+      </div>
+      <label class="cb__toggle">
+        <input type="checkbox" checked disabled>
+        <span class="cb__track"><span class="cb__thumb"></span></span>
+      </label>
+    </div>
+    <div class="cb__row">
+      <div class="cb__label">
+        Preferences
+        <span>Language, region settings</span>
+      </div>
+      <label class="cb__toggle">
+        <input type="checkbox" id="cb-pref" checked>
+        <span class="cb__track"><span class="cb__thumb"></span></span>
+      </label>
+    </div>
+    <div class="cb__row">
+      <div class="cb__label">
+        Statistics
+        <span>Anonymous analytics</span>
+      </div>
+      <label class="cb__toggle">
+        <input type="checkbox" id="cb-stat" checked>
+        <span class="cb__track"><span class="cb__thumb"></span></span>
+      </label>
+    </div>
+    <div class="cb__row">
+      <div class="cb__label">
+        Marketing
+        <span>Personalised advertising</span>
+      </div>
+      <label class="cb__toggle">
+        <input type="checkbox" id="cb-mkt">
+        <span class="cb__track"><span class="cb__thumb"></span></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="cb__actions">
+    <div class="cb__btns">
+      <button class="cb__btn cb__btn--deny" id="cb-deny">
+        Essential Only
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="#3d3936" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="cb__btn cb__btn--accept" id="cb-accept">
+        Accept All
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="#f9f7f7" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <button class="cb__manage" id="cb-manage">Manage my cookies</button>
+  </div>
+
+</div>
