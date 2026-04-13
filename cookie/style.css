@@ -1,0 +1,222 @@
+/* ══════════════════════════════
+   Custom Cookie Banner
+   ══════════════════════════════ */
+
+.cb {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 532px;
+  max-width: 90dvw;
+  background: #3d3936;
+  padding: 28px;
+  font-family: 'The Future', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* entrance */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.cb.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Close ── */
+.cb__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+  color: #f9f7f7;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  padding: 0;
+  border: 1px solid white;
+border-radius: 200px;
+}
+.cb__close:hover { opacity: 1; }
+
+/* ── Content ── */
+.cb__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-right: 16px;
+}
+
+.cb__title {
+  color: #f9f7f7;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.cb__text {
+  color: #f9f7f7;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ── Settings panel ── */
+.cb__settings {
+  margin-bottom: 20px;
+  border-top: 1px solid rgba(249, 247, 247, 0.15);
+  padding-top: 16px;
+}
+.cb__settings[hidden] { display: none; }
+
+.cb__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(249, 247, 247, 0.08);
+}
+.cb__row:last-child { border-bottom: none; }
+
+.cb__label {
+  color: #f9f7f7;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.cb__label span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.4;
+  margin-top: 2px;
+}
+
+/* Toggle */
+.cb__toggle {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.cb__toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.cb__track {
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 247, 247, 0.2);
+  transition: background 0.2s;
+}
+.cb__toggle input:checked + .cb__track { background: #f9f7f7; }
+.cb__toggle input:disabled + .cb__track { opacity: 0.35; cursor: not-allowed; }
+
+.cb__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: #3d3936;
+  transition: transform 0.2s;
+}
+.cb__toggle input:checked + .cb__track .cb__thumb {
+  transform: translateX(16px);
+}
+
+/* ── Actions ── */
+.cb__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cb__btns {
+  display: flex;
+  gap: 16px;
+}
+
+/* Buttons base */
+.cb__btn {
+  flex: 1;
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px 4px 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+}
+.cb__btn:hover { opacity: 0.8; }
+
+/* Essential Only */
+.cb__btn--deny {
+  background: #f9f7f7;
+  color: #3d3936;
+}
+
+/* Accept All */
+.cb__btn--accept {
+  background: transparent;
+  border: 1px solid #f9f7f7;
+  color: #f9f7f7;
+}
+
+/* Manage link */
+.cb__manage {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  color: #f9f7f7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.cb__manage:hover { opacity: 1; }
+
+/* ── Mobile ── */
+@media (max-width: 540px) {
+    .cb {
+        bottom: 15px;
+        right: 15px;
+        width: 100%;
+        max-width: 90dvw;
+    }
+
+  .cb__btns {
+    flex-direction: column;
+  }
+}
